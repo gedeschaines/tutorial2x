@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<HTML>
+ <HEAD>
+  <TITLE>tutorial2x</TITLE>
+  <META NAME="generator" CONTENT="wxMaxima">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    displayAlign: "left",
+    context: "MathJax",
+    TeX: {TagSide: "left"}
+  })
+</script>
+<script type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_HTML">
+</script>
+  <link rel="stylesheet" type="text/css" href="tutorial2x_htmlimg/tutorial2x.css"/>
+ </HEAD>
+ <BODY>
+
+<!-- ***************************************************** -->
+<!--          Created with wxMaxima version 18.02.0         -->
+<!-- ***************************************************** -->
+<noscript><div class="error message">    Please enable JavaScript in order to get a 2d display of the equations embedded in this web page.</div></noscript>\(      \DeclareMathOperator{\abs}{abs}
+      \newcommand{\ensuremath}[1]{\mbox{$#1$}}
+\)
+
+<!-- Title cell -->
+
+
+<P CLASS="title">
+Non-linear Differential Equations of Motion for tutorial2x.py
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Provided herein is the wxMaxima derivation of a discrete state representation in the form Y' = Ainv*G(y,y') for non-linear differential equations of motion of the double pendulum system described for problem 6.4 presented on page 276 of reference [1].<BR><BR>References:<BR><BR> &nbsp;&nbsp;[1] Greenwood, Donald T., &quot;Principles of Dynamics&quot;. Englewood Cliffs, N.J.: Prentice-Hall, Inc., 1965.<BR>
+</P>
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+The following two cells present the non-linear differential equations of motion given on page 505 of reference [1] as solution (a) to problem 6-4 presented on page 276 of same reference.<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_variable">m</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·((<span class="code_number">3</span><span class="code_operator">+</span><span class="code_number">2</span>·<span class="code_function">cos</span>(<span class="code_variable">φ</span>))·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">+</span>(<span class="code_number">1</span><span class="code_operator">+</span><span class="code_function">cos</span>(<span class="code_variable">φ</span>))·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">−</span><span class="code_function">sin</span>(<span class="code_variable">φ</span>)·(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)<span class="code_operator">^</span><span class="code_number">2</span><span class="code_operator">+</span><span class="code_number">2</span>·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)))<span class="code_operator">+</span><span class="code_variable">m</span>·<span class="code_variable">g</span>·<span class="code_variable">l</span>·(<span class="code_number">2</span>·<span class="code_function">sin</span>(<span class="code_variable">θ</span>)<span class="code_operator">+</span><span class="code_function">sin</span>(<span class="code_variable">θ</span><span class="code_operator">+</span><span class="code_variable">φ</span>))<span class="code_operator">=</span><span class="code_number">0</span><span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{%o21} g l m\, \left( \sin{\left( \phi +\theta \right) }+2 \sin{\left( \theta \right) }\right) +{{l}^{2}} m\, \left( \left( \cos{\left( \phi \right) }+1\right) \, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \phi \right) -\sin{\left( \phi \right) } \left( {{\left( \frac{d}{d t} \phi \right) }^{2}}+2 \left( \frac{d}{d t} \theta \right) \, \left( \frac{d}{d t} \phi \right) \right) +\left( \frac{{{d}^{2}}}{d {{t}^{2}}} \theta \right) \, \left( 2 \cos{\left( \phi \right) }+3\right) \right) =0\]
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_variable">m</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·((<span class="code_number">1</span><span class="code_operator">+</span><span class="code_function">cos</span>(<span class="code_variable">φ</span>))·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">+</span><span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">+</span><span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)<span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_function">sin</span>(<span class="code_variable">φ</span>))<span class="code_operator">+</span><span class="code_variable">m</span>·<span class="code_variable">g</span>·<span class="code_variable">l</span>·<span class="code_function">sin</span>(<span class="code_variable">θ</span><span class="code_operator">+</span><span class="code_variable">φ</span>)<span class="code_operator">=</span><span class="code_number">0</span><span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{%o4} g l m \sin{\left( \phi +\theta \right) }+{{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \phi +{{\left( \frac{d}{d t} \theta \right) }^{2}} \sin{\left( \phi \right) }+\left( \frac{{{d}^{2}}}{d {{t}^{2}}} \theta \right) \, \left( \cos{\left( \phi \right) }+1\right) \right) =0\]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+This pair of differential equations are expanded to group terms containing 2nd derivatives of Theta and Phi in order to transform the above two equations into the form A*Y' = G(y,y').<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_function">expand</span>(<span class="code_variable">m</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·((<span class="code_number">3</span><span class="code_operator">+</span><span class="code_number">2</span>·<span class="code_function">cos</span>(<span class="code_variable">φ</span>))·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">+</span>(<span class="code_number">1</span><span class="code_operator">+</span><span class="code_function">cos</span>(<span class="code_variable">φ</span>))·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">−</span><span class="code_function">sin</span>(<span class="code_variable">φ</span>)·(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)<span class="code_operator">^</span><span class="code_number">2</span><span class="code_operator">+</span><span class="code_number">2</span>·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)))<span class="code_operator">+</span><span class="code_variable">m</span>·<span class="code_variable">g</span>·<span class="code_variable">l</span>·(<span class="code_number">2</span>·<span class="code_function">sin</span>(<span class="code_variable">θ</span>)<span class="code_operator">+</span><span class="code_function">sin</span>(<span class="code_variable">θ</span><span class="code_operator">+</span><span class="code_variable">φ</span>)))<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{%o8} g l m \sin{\left( \phi +\theta \right) }+{{l}^{2}} m \cos{\left( \phi \right) } \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \phi \right) +{{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \phi \right) -{{l}^{2}} m \sin{\left( \phi \right) } {{\left( \frac{d}{d t} \phi \right) }^{2}}-2 {{l}^{2}} m\, \left( \frac{d}{d t} \theta \right)  \sin{\left( \phi \right) } \left( \frac{d}{d t} \phi \right) +2 {{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \theta \right)  \cos{\left( \phi \right) }+3 {{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \theta \right) +2 g l m \sin{\left( \theta \right) }\]
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_function">expand</span>(<span class="code_variable">m</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·((<span class="code_number">1</span><span class="code_operator">+</span><span class="code_function">cos</span>(<span class="code_variable">φ</span>))·<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">+</span><span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>)<span class="code_operator">+</span><span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>)<span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_function">sin</span>(<span class="code_variable">φ</span>))<span class="code_operator">+</span><span class="code_variable">m</span>·<span class="code_variable">g</span>·<span class="code_variable">l</span>·<span class="code_function">sin</span>(<span class="code_variable">θ</span><span class="code_operator">+</span><span class="code_variable">φ</span>))<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{%o10} g l m \sin{\left( \phi +\theta \right) }+{{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \phi \right) +{{l}^{2}} m\, {{\left( \frac{d}{d t} \theta \right) }^{2}} \sin{\left( \phi \right) }+{{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \theta \right)  \cos{\left( \phi \right) }+{{l}^{2}} m\, \left( \frac{{{d}^{2}}}{d {{t}^{2}}} \theta \right) \]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+The elements of the A matrix are coefficients of terms containing 2nd derivatives of Theta and Phi as presented below.<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_variable">A</span><span class="code_operator">:</span> <span class="code_function">matrix</span>(<BR>
+ [<span class="code_number">2</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>·<span class="code_function">cos</span>(<span class="code_variable">φ</span>)<span class="code_operator">+</span><span class="code_number">3</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>,<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>·<span class="code_function">cos</span>(<span class="code_variable">φ</span>)<span class="code_operator">+</span><span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>], <BR>
+ [<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>·<span class="code_function">cos</span>(<span class="code_variable">φ</span>)<span class="code_operator">+</span><span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>,<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>]<BR>
+)<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{A}\begin{pmatrix}2 {{l}^{2}} m \cos{\left( \phi \right) }+3 {{l}^{2}} m & {{l}^{2}} m \cos{\left( \phi \right) }+{{l}^{2}} m\\
+{{l}^{2}} m \cos{\left( \phi \right) }+{{l}^{2}} m & {{l}^{2}} m\end{pmatrix}\]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+The Y' matrix contains 2nd derivative terms for the state variables Theta and Phi as such.<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_variable">Yprime</span><span class="code_operator">:</span> <span class="code_function">matrix</span>(<BR>
+ [(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>))], <BR>
+ [(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">2</span>))]<BR>
+)<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{Yprime}\begin{pmatrix}\frac{{{d}^{2}}}{d {{t}^{2}}} \theta \\
+\frac{{{d}^{2}}}{d {{t}^{2}}} \phi \end{pmatrix}\]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+The G matrix contains remaining terms of the differential equations of motion which do not contain 2nd derivatives of Theta and Phi; moved to the right side of the equality sign.<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_variable">G</span><span class="code_operator">:</span> <span class="code_number">−</span><span class="code_number">1</span>·<span class="code_function">matrix</span>(<BR>
+ [<span class="code_variable">g</span>·<span class="code_variable">l</span>·<span class="code_variable">m</span>·<span class="code_function">sin</span>(<span class="code_variable">φ</span><span class="code_operator">+</span><span class="code_variable">θ</span>)<span class="code_operator">−</span><span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>·<span class="code_function">sin</span>(<span class="code_variable">φ</span>)·(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>))<span class="code_operator">^</span><span class="code_number">2</span><span class="code_operator">−</span><span class="code_number">2</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>·(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>))·<span class="code_function">sin</span>(<span class="code_variable">φ</span>)·(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">φ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>))<span class="code_operator">+</span><span class="code_number">2</span>·<span class="code_variable">g</span>·<span class="code_variable">l</span>·<span class="code_variable">m</span>·<span class="code_function">sin</span>(<span class="code_variable">θ</span>)], <BR>
+ [<span class="code_variable">g</span>·<span class="code_variable">l</span>·<span class="code_variable">m</span>·<span class="code_function">sin</span>(<span class="code_variable">φ</span><span class="code_operator">+</span><span class="code_variable">θ</span>)<span class="code_operator">+</span><span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_variable">m</span>·(<span class="code_operator">'</span><span class="code_function">diff</span>(<span class="code_variable">θ</span>,<span class="code_variable">t</span>,<span class="code_number">1</span>))<span class="code_operator">^</span><span class="code_number">2</span>·<span class="code_function">sin</span>(<span class="code_variable">φ</span>)]<BR>
+)<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{G}\begin{pmatrix}-g l m \sin{\left( \phi +\theta \right) }+{{l}^{2}} m \sin{\left( \phi \right) } {{\left( \frac{d}{d t} \phi \right) }^{2}}+2 {{l}^{2}} m\, \left( \frac{d}{d t} \theta \right)  \sin{\left( \phi \right) } \left( \frac{d}{d t} \phi \right) -2 g l m \sin{\left( \theta \right) }\\
+-g l m \sin{\left( \phi +\theta \right) }-{{l}^{2}} m\, {{\left( \frac{d}{d t} \theta \right) }^{2}} \sin{\left( \phi \right) }\end{pmatrix}\]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+The expression A*Y' = G(y,y') can be rearranged to solve for Y' by multiplying both sides by the inverse of matrix A to yield Y' = Ainv*G(y,y'). But first, matrix A can be simplified by factoring and dividing by the m*l^2 term present in each element. Note matrix G(y,y') must also be divided by the same m*l^2 term.<BR><BR>Factoring matrix A, dividing by m*l^2, inverting and expanding yields the following expression for Ainv.<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_variable">Ainv</span><span class="code_operator">:</span><span class="code_function">expand</span>(<span class="code_function">invert</span>(<span class="code_function">factor</span>(<span class="code_variable">A</span>)<span class="code_operator">/</span>(<span class="code_variable">m</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>)))<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{Ainv}\begin{pmatrix}\frac{1}{2-{{\cos{\left( \phi \right) }}^{2}}} & -\frac{\cos{\left( \phi \right) }}{2-{{\cos{\left( \phi \right) }}^{2}}}-\frac{1}{2-{{\cos{\left( \phi \right) }}^{2}}}\\
+-\frac{\cos{\left( \phi \right) }}{2-{{\cos{\left( \phi \right) }}^{2}}}-\frac{1}{2-{{\cos{\left( \phi \right) }}^{2}}} & \frac{2 \cos{\left( \phi \right) }}{2-{{\cos{\left( \phi \right) }}^{2}}}+\frac{3}{2-{{\cos{\left( \phi \right) }}^{2}}}\end{pmatrix}\]
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_function">factor</span>(<span class="code_variable">Ainv</span>)<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{%o12} \begin{pmatrix}-\frac{1}{{{\cos{\left( \phi \right) }}^{2}}-2} & \frac{\cos{\left( \phi \right) }+1}{{{\cos{\left( \phi \right) }}^{2}}-2}\\
+\frac{\cos{\left( \phi \right) }+1}{{{\cos{\left( \phi \right) }}^{2}}-2} & -\frac{2 \cos{\left( \phi \right) }+3}{{{\cos{\left( \phi \right) }}^{2}}-2}\end{pmatrix}\]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+Note the expression for matrix Ainv can be further simplified by moving the common element denominator term outside the matrix.<BR><BR>Factoring matrix G and dividing by m*l^2 yields the following expression for G.<BR>
+</P>
+
+
+<!-- Code cell -->
+
+
+<TABLE><TR><TD>
+  <SPAN CLASS="prompt">
+ -->	
+  </SPAN></TD>
+  <TD><SPAN CLASS="input">
+<span class="code_function">factor</span>(<span class="code_variable">G</span>)<span class="code_operator">/</span>(<span class="code_variable">m</span>·<span class="code_variable">l</span><span class="code_operator">^</span><span class="code_number">2</span>)<span class="code_endofline">;</span>  </SPAN></TD>
+</TR></TABLE>
+\[\tag{%o13} \begin{pmatrix}-\frac{g \sin{\left( \phi +\theta \right) }-l \sin{\left( \phi \right) } {{\left( \frac{d}{d t} \phi \right) }^{2}}-2 l\, \left( \frac{d}{d t} \theta \right)  \sin{\left( \phi \right) } \left( \frac{d}{d t} \phi \right) +2 g \sin{\left( \theta \right) }}{l}\\
+-\frac{g \sin{\left( \phi +\theta \right) }+l\, {{\left( \frac{d}{d t} \theta \right) }^{2}} \sin{\left( \phi \right) }}{l}\end{pmatrix}\]
+
+
+<!-- Text cell -->
+
+
+<P CLASS="comment">
+The above expressions for matrix Ainv and G are implemented for the non-linearized differential equations of motion in the dotS function of the PyODE double pendulum simulation modeled in the tutorial2x.py Python script.<BR>
+</P>
+
+ <HR>
+ <SMALL> Created with <A HREF="https://andrejv.github.io/wxmaxima/">wxMaxima</A>.</SMALL>
+ </BODY>
+</HTML>
