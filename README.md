@@ -2,7 +2,7 @@
 
 ## Background ##
 
-The Python scripts and supporting documents in this repository were developed in 2015 to evaluate the fidelity of Open Dynamics Engine (ODE) modeling of a simple physical system. Since that time there have been countless physics, mechanics and dynamics course lectures, blog articles and YouTube videos presenting computer programs created in almost every programming language (C, C++, C#, Java, Javascript, Julia, MathCad, Mathematica, MATLAB, Python, etc.) to illustrate the simulation and animation of pendulum system dynamics. Therefore, it is not intended that information provided herein will be of any significant value. It is just another double pendulum simulation and animation implementation in Python; which may be of interest, specifically as an implementation utilizing the PyODE, Pygame, Matplotlib and SciPy packages.
+The Python scripts and supporting documents in this repository were developed in 2015 to evaluate the fidelity of Open Dynamics Engine (ODE) modeling of a simple physical system. Since that time there have been countless physics, mechanics and dynamics course lectures, blog articles and YouTube videos presenting computer programs created in almost every programming language (C, C++, C#, Java, Javascript, Julia, MathCad, Mathematica, MATLAB, Python, etc.) to illustrate the simulation and animation of pendulum system dynamics. Therefore, it is not intended that information provided herein will be of any significant value. It is just another double pendulum simulation and animation implementation in Python; which may be of interest, specifically as an implementation utilizing the PyODE, Pygame, NumPy, Matplotlib and SciPy packages.
 
 The inducement to evaluate the fidelity of ODE's modeling of connected rigid body systems stemmed from a desire to utilize the ODE library in modeling bipedal robotic figures. One major technical issue with using ODE to implement control of jointed rigid body chains is unavailable joint and body accelerations needed to support forward and inverse dynamics computations. These accelerations must be derived from available joint motion rates, body angular and linear velocities, and joint feadback forces and torques. Development of a method to derive accelerations and its practicality must be evaluated.
 
@@ -33,7 +33,7 @@ The wxMaxima tutorial2x.wxmx and exported tutorial2x.html files present the deri
 
 ## Execution ##
 
-The five tutorial2\[x|bob|bobs|rods|arm].py programs described in the above "Contents" section have successfully executed using Python versions 2.7.18 and 3.8.10 provided in an Ubuntu Linux 20.04 LTS release installed in WSL2 for Microsoft Windows 10 Pro version 22H2 OS build 19045.5247 with the requisite Python packages from sources listed in the following table.
+The five tutorial2\[x|bob|bobs|rods|arm].py programs described in the above "Content" section have successfully executed using Python versions 2.7.18 and 3.8.10 provided in an Ubuntu Linux 20.04 LTS release installed in WSL2 for Microsoft Windows 10 Pro version 22H2 OS build 19045.5247 with the requisite Python packages from sources listed in the following table.
 
  <p align="center">Versions of requisite packages associated with Python version
   <table rows="8" cols="5">
