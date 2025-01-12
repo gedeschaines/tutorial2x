@@ -36,12 +36,12 @@ system modeled with Python Open Dynamics Engine (PyODE):
 # [7] Liu, Karen and Jain, Sumit, "A Quick Tutorial on Multibody Dynamics,"
 #     Tech Report GIT-GVU-15-01-1, School of Interactive Computing, Georgia
 #     Institute of Technology, 2012. Web available at
-#     https://bitbucket.org/karenliu/rtql8/src/default/docs/dynamics-tutorial.pdf
+#     https://studylib.net/doc/14301909/a-quick-tutorial-on-multibody-dynamics
 #
 # [8] Dr. Robert L. William II, "Robot Mechanics: Notesbook Supplement
 #     for ME 4290/5290 Mechanics and Control of Robotic Manipulators",
 #     Ohio University, Mech. Engineering, Spring 2015; web available at
-#     https://www.ohio.edu/mechanical-faculty/williams/html/PDF/Supplement4290.pdf
+#     https://people.ohio.edu/williams/html/PDF/Supplement4290.pdf
 #
 # Disclaimer:
 #

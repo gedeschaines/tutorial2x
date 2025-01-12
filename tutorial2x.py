@@ -31,7 +31,7 @@
 #
 # [2] Nielsen, R.O., Have E., Nielsen, B.T. "The Double Pendulum: First Year
 #     Project." The Niels Bohr Institute, Mar. 21, 2013. Web available at
-#     http://psi.nbi.dk/@psi/wiki/The%20Double%20Pendulum/files/projekt%202013-14%20RON%20EH%20BTN.pdf
+#     https://paperzz.com/doc/8137378/the-double-pendulum
 #
 # [5] Lynch, Kevin M. and Park, Frank C., "Modern Robotics:  Mechanics, 
 #     Planning, and Control," 3rd printing 2019, Cambridge University
@@ -44,7 +44,7 @@
 # [7] Liu, Karen and Jain, Sumit, "A Quick Tutorial on Multibody Dynamics,"
 #     Tech Report GIT-GVU-15-01-1, School of Interactive Computing, Georgia
 #     Institute of Technology, 2012. Web available at
-#     https://bitbucket.org/karenliu/rtql8/src/default/docs/dynamics-tutorial.pdf
+#     https://studylib.net/doc/14301909/a-quick-tutorial-on-multibody-dynamics
 #
 # Disclaimer:
 #
