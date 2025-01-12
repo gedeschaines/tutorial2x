@@ -29,7 +29,7 @@ The following two Python modules provide the Runge-Kutta integration functions a
   * RK4_Solver.py - Provides a RK4_Solver class from which to instantiate Runge-Kutta 4th order integration method objects.
   * vecMath.py- Provides an assortment of 1x3 vector and 3x3 matrix math functions.
 
-The wxMaxima tutorial2x.wxmx and exported tutorial2x.html files in the ./docs folder present the derivation of non-linearized differential equations of motion utilized in the tutorial2x.py script for the idealized double pendulum system.
+The wxMaxima tutorial2x.wxmx and exported tutorial2x.html files in the [./docs](https://gedeschaines.github.io/tutorial2x) folder present the derivation of non-linearized differential equations of motion utilized in the tutorial2x.py script for the idealized double pendulum system.
 
 ## Execution ##
 
