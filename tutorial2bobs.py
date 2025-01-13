@@ -107,7 +107,7 @@ USE_IDEALIZED  = False  # True: idealized double pendulum (ref [3])
 USE_FEEDBACK   = False  # Compute accelerations using feedback forces & torques
  
 T_STEP =  0.001  # Simulation and integration time step size (sec)
-T_STOP =  0.080  # Simulation and integration stop time (sec)
+T_STOP = 15.080  # Simulation and integration stop time (sec)
 
 PRINT_DATA = False  # Controls printing of collected data
 PRINT_FBCK = False  # Controls printing of joint feedback
