@@ -89,7 +89,7 @@ T_STOP   = 2.368     # Simulation stop time (sec)
                      # degrees the period of oscillation is given by
                      # 7.4164*sqrt(LENGTH/G).
 
-PRINT_DATA = True    # Controls printing of calculation data and results
+PRINT_DATA = False   # Controls printing of calculation data and results
 PLOT_DATA  = True    # Controls plotting of calculation data and results
 SAVE_ANIM  = False   # Controls saving animation images
 

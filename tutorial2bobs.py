@@ -109,9 +109,9 @@ USE_FEEDBACK   = False  # Compute accelerations using feedback forces & torques
 T_STEP =  0.001  # Simulation and integration time step size (sec)
 T_STOP =  0.080  # Simulation and integration stop time (sec)
 
-PRINT_DATA = True   # Controls printing of collected data
-PRINT_FBCK = True   # Controls printing of joint feedback
-PRINT_EVAL = True   # Controls printing of dynamics evaluations
+PRINT_DATA = False  # Controls printing of collected data
+PRINT_FBCK = False  # Controls printing of joint feedback
+PRINT_EVAL = False  # Controls printing of dynamics evaluations
 PLOT_DATA  = True   # Controls plotting of collected data
 SAVE_ANIM  = False  # Controls saving animation images
 
