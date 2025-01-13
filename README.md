@@ -14,7 +14,7 @@ The Python programs contained in this repository are extended versions derived f
 
  1. tutorial2x.py - Uses linearized and non-linearized differential equations of motion for an idealized double pendulum system comprised of point masses connected by massless, infinitely stiff rods using frictionless hinge joints.
  
- 2. tutorial2bob.py - Uses non-linearized differential equations of motion for a physical single pendulums system comprised of a solid spherical mass bob suspended from a frictionless hinge joint by a massless, infinitely stiff rod.
+ 2. tutorial2bob.py - Uses non-linearized differential equations of motion for a physical single pendulum system comprised of a solid spherical mass bob suspended from a frictionless hinge joint by a massless, infinitely stiff rod.
  
  3. tutorial2bobs.py - Uses linearized and non-linearized differential equations of motion for an idealized double pendulum system as in tutorial2x.py, and non-linearized differential equations of motion for solid spherical mass bobs connected by massless, infinitely stiff rods using frictionless hinge joints.
  
