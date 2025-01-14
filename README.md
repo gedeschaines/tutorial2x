@@ -20,7 +20,7 @@ The Python programs contained in this repository are extended versions derived f
  
  4. tutorial2rods.py - Uses non-linearized differential equations of motion for solid, dimensional, infinitely stiff mass rods connected by frictionless hinge joints.
 
- 5. tutorial2arm.py - Planar 2R robotic arm dynamics, as presented in reference \[8], simulated with ODE and Pygame.
+ 5. tutorial2arm.py - Two-link Planar 2R robotic arm dynamics, as presented in reference \[8], simulated with ODE and Pygame.
 
 A tutorial2eval.py Python script imported by tutorial2x.py and tutorial2bobs.py programs provides procedures for computing angular and linear accelerations from ODE modeled joints' and bodies' states for the compound double pendulum system.
 
@@ -138,7 +138,7 @@ Since the derived equations of motion (eqom) for an idealized pendulum system ne
 
 The following animated GIF depicts double pendulum system motion of the ODE physical model as solid blue spheres connected by black rods overlayed with the RK4 integrated linearized eqom as red circles connected by magenta rods.  
 
-![Alt text](./anim/tutorial2x_1a_anim.gif)  
+![Linearized double pendulum motion](./anim/tutorial2x_1a_anim.gif)  
 
 
 The following four figures show linear and angular velocities of the RK4 integrated masses begin to diverge from the corresponding ODE bodies before one second of simulation time has elapsed.  
@@ -156,7 +156,7 @@ Note in the following plot of total energy relative to system's minimum potentia
 
 The following animated GIF depicts double pendulum system motion of the ODE physical model as solid blue spheres connected by black rods overlayed with the RK4 integrated non-linearized eqom as red circles connected by magenta rods.  
 
-![Alt text](./anim/tutorial2x_1b_anim.gif)  
+![Non-linearized double pendulum motion](./anim/tutorial2x_1b_anim.gif)  
 
 
 The following four figures show the linear and angular velocities of the RK4 integrated masses begin to diverge from the corresponding ODE bodies after about two seconds of simulation time has elapsed.  
@@ -178,7 +178,7 @@ Since the derived equations of motion (eqom) for an idealized pendulum system ne
 
 The following animated GIF depicts double pendulum system motion of the ODE physical model as solid blue spheres connected by black rods overlayed with the RK4 integrated linearized, idealized eqom as red circles connected by magenta rods.  
 
-![Alt text](./anim/tutorial2bobs_2a_anim.gif)  
+![Linearized ideal double pendulum motion](./anim/tutorial2bobs_2a_anim.gif)  
 
 
 The following four figures show linear and angular velocities of the RK4 integrated masses begin to diverge from the corresponding ODE bodies before one second of simulation time has elapsed. These results should be identical to case 1.a above.  
@@ -196,7 +196,7 @@ Note in the following plot of total energy relative to system's minimum potentia
 
 The following animated GIF depicts double pendulum system motion of the ODE physical model as solid blue spheres connected by black rods overlayed with the RK4 integrated non-linearized, idealized eqom as red circles connected by magenta rods.  
 
-![Alt text](./anim/tutorial2bobs_2b_anim.gif)  
+![Non-linearized ideal double pendulum motion](./anim/tutorial2bobs_2b_anim.gif)  
 
 
 The following four figures show the linear and angular velocities of the RK4 integrated masses begin to diverge from the corresponding ODE bodies after about two seconds of simulation time has elapsed. Although the differential eqom are derived using different parameterization of motion compared to case 1.b, the results should be identical.  
@@ -214,7 +214,7 @@ Note in the following plot of total energy relative to system's minimum potentia
 
 The following animated GIF depicts double pendulum system motion of the ODE physical model as solid blue spheres connected by black rods overlayed with the RK4 integrated non-idealized (i.e., physical) eqom as red circles connected by magenta rods.  
 
-![Alt text](./anim/tutorial2bobs_2c_anim.gif)  
+![Non-linearized non-ideal double pendulum motion](./anim/tutorial2bobs_2c_anim.gif)  
 
 
 The following four figures show the linear and angular velocities of the RK4 integrated masses do not noticeably diverge from the corresponding ODE bodies after 15 seconds of simulation time has elapsed.  
@@ -227,6 +227,37 @@ The following four figures show the linear and angular velocities of the RK4 int
 Note in the following plot of total energy relative to system's minimum potential energy, as expected there is zero variation in total energy of the RK4 integrated system compared to the ODE modeled system.  
 
 ![Double pendulum total energy vs time](./imgs/2c/Figure_5.png)  
+
+### 3. Summary of tutorial2rods.py Results ###
+
+TBD
+
+### 4. Summary of tutorial2arm.py Results ###
+
+The inverse dynamics problem presented in the "Numerical Dynamics Section" on page 94 of reference \[8] modeled using the tutorial2arm.py program are presented herein.
+
+The following animated GIF depicts the two-link planar 2R robotic arm motion of the ODE physical model with arms represented by solid blue rectangular boxes and their centers of mass (com) as blue filled circles, interconnected with revolute joints represented with solid black circles, and terminated with an end effector also represented with a solid black circle. The robotic arm motion determined by RK4 integrated eqom is depicted as magenta line segments representing the two links (rods), overlayed on top of the blue rectangular boxes with magenta circles about each rod com, connecting revolute joints and end effector represented as red circles.
+
+![Planar 2R robotic arm motion](./anim/tutorial2arm_anim.gif)  
+
+
+The followimg figure depicts the ODE and RK4 simulated end effector velocity components which match the constant commanded Cartesian velocity \{Vx, Vy} of \{0.0, 0.5} meters per second except in the last 0.4 seconds where the ODE simulation results diverge from the constant commanded velocity. 
+
+![Planar 2R robotic arn end effector Cartesian velocity vs time](./imgs/4/Figure_2.png)
+
+The following three figures show very good aggrement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system.
+
+![Planar 2R robotic arn Body Linear Velocity vs time](./imgs/4/Figure_3.png)
+![Planar 2R robotic arn Body Linear Acceleration vs time](./imgs/4/Figure_4.png)
+![Planar 2R robotic arn Body Angular Velocity vs time](./imgs/4/Figure_5.png)
+
+The following five figures correspond with the plots presented in the "Numerical Dynamics Example: Plots" section on page 95 of reference \[8]; the last figure corresponding with the "Dynamic Results Including Gravity" Joint Torques plot. The initial discontinuities in ODE simulation results are due to the low fidelity integration scheme utilized in ODE.
+
+![Planar 2R robotic arn Cartesian Pose vs time](./imgs/4/Figure_1.png)
+![Planar 2R robotic arn Joint Angles vs time](./imgs/4/Figure_6.png)
+![Planar 2R robotic arn Joint Rates vs time](./imgs/4/Figure_7.png)
+![Planar 2R robotic arn Joint Accelerations vs time](./imgs/4/Figure_8.png)
+![Planar 2R robotic arn Joint Torques vs time](./imgs/4/Figure_9.png)
 
 ## Disclaimer ##
 
