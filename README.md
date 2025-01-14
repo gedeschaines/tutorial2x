@@ -237,7 +237,7 @@ TBD
 
 ### 4. Summary of tutorial2arm.py Results ###
 
-The inverse dynamics problem presented in the "Numerical Dynamics Section" on page 94 of reference \[8] modeled using the tutorial2arm.py program are presented herein.
+The inverse dynamics problem presented in the "Numerical Dynamics Section" on page 94 of reference \[8] modeled using the tutorial2arm.py program is presented herein.
 
 The following animated GIF depicts the two-link planar 2R robotic arm motion of the ODE physical model with arms represented by solid blue rectangular boxes and their centers of mass (com) as blue filled circles, interconnected with revolute joints represented with solid black circles, and terminated with an end effector also represented with a solid black circle. The robotic arm motion determined by RK4 integrated eqom is depicted as magenta line segments representing the two links (rods), overlayed on top of the blue rectangular boxes with magenta circles about each rod com, connecting revolute joints and end effector represented as red circles.
 
@@ -248,7 +248,7 @@ The followimg figure depicts the ODE and RK4 simulated end effector velocity com
 
 ![Planar 2R robotic arm end effector Cartesian velocity vs time](./imgs/4/Figure_2.png)  
 
-The following three figures show very good agreement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system. Note in the 
+The following three figures show very good agreement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system. Note in the second figure immediately below, the robotic arm body linear accelerations modeled using ODE amd RK4 match the theoretical solution using Newtonian Equations of Motion (EOM).
 
 ![Planar 2R robotic arm Body Linear Velocity vs time](./imgs/4/Figure_3.png)
 ![Planar 2R robotic arm Body Linear Acceleration vs time](./imgs/4/Figure_4.png)
