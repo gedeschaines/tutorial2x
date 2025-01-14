@@ -4,7 +4,7 @@
 
 The Python scripts and supporting documents in this repository were developed in 2015 to evaluate the fidelity of Open Dynamics Engine (ODE) modeling of a simple physical system. Since that time there have been countless physics, mechanics and dynamics course lectures, blog articles and YouTube videos presenting computer programs created in almost every programming language (C, C++, C#, Java, Javascript, Julia, MathCad, Mathematica, MATLAB, Python, etc.) to illustrate the simulation and animation of pendulum system dynamics. Therefore, it is not intended that information provided herein will be of any significant value. It is just another double pendulum simulation and animation implementation in Python; which may be of interest, specifically as an implementation utilizing the PyODE, Pygame, NumPy, Matplotlib and SciPy packages.
 
-The inducement to evaluate the fidelity of ODE's modeling of connected rigid body systems stemmed from a desire to utilize the ODE library in modeling bipedal robotic figures. One major technical issue with using ODE to implement control of jointed rigid body chains is unavailable joint and body accelerations needed to support forward and inverse dynamics computations. These accelerations must be derived from available joint motion rates, body angular and linear velocities, and joint feadback forces and torques. Development of a method to derive accelerations and its practicality must be evaluated.
+The inducement to evaluate the fidelity of ODE's modeling of connected rigid body systems stemmed from a desire to utilize the ODE library in modeling bipedal robotic figures (e.g., [viewODE](https://github.com/gedeschaines/viewODE)). One major technical issue with using ODE to implement control of jointed rigid body chains is unavailable joint and body accelerations needed to support forward and inverse dynamics computations. These accelerations must be derived from available joint motion rates, body angular and linear velocities, and joint feadback forces and torques. Development of a method to derive accelerations and its practicality must be evaluated.
 
 To reduce the scope of the evaluation, a planar double pendulum system was chosen as a representative, simple connected rigid body system and the [PyODE Tutorial 2](http://pyode.sourceforge.net/tutorials/tutorial2.html) program was selected as the basis for modifications to perform comparative analysis with derived equations of motion and calculation methods for angular and linear accelerations.
 
@@ -20,9 +20,9 @@ The Python programs contained in this repository are extended versions derived f
  
  4. tutorial2rods.py - Uses non-linearized differential equations of motion for solid, dimensional, infinitely stiff mass rods connected by frictionless hinge joints.
 
- 5. tutorial2arm.py - 2R robotic arm dynamics with PyODE and Pygame.
+ 5. tutorial2arm.py - 2R robotic arm dynamics, as presented in reference \[8], simulated with PyODE and Pygame.
 
-A tutorial2eval.py Python script imported by tutorial2x.py and tutorial2bobs.py programs provides procedures for computing angular and linear accelerations from ODE modelled joints and bodies states for the compound double pendulum system.
+A tutorial2eval.py Python script imported by tutorial2x.py and tutorial2bobs.py programs provides procedures for computing angular and linear accelerations from ODE modeled joints' and bodies' states for the compound double pendulum system.
 
 The following two Python modules provide the Runge-Kutta integration functions and vector/matrix math functions utilized by each of the programs listed above.
 
@@ -124,13 +124,15 @@ The references listed were used to develop the equations of motion for the vario
      Institute of Technology, 2012. Web available at
      https://studylib.net/doc/14301909/a-quick-tutorial-on-multibody-dynamics
 
+\[8] Dr. Robert L. William II, "Robot Mechanics: Notesbook Supplement for ME 4290/5290 Mechanics and Control of Robotic Manipulators", Ohio University, Mech. Engineering, Spring 2015; web available at https://people.ohio.edu/williams/html/PDF/Supplement4290.pdf
+
 ## Evaluation Summaries ##
 
 The following subsections present comparative analysis results illustrating an incrementatal approach to evaluating ODE's fidelity. First, the ODE physical system is compared to a linearized ideal system, then a non-linearized ideal system, and finally to a non-linearized, non-idealized (i.e., a physical) system. In all cases, a very small ODE simulation and RK4 integration step size of 0.001 seconds was used to reduce ODE modeling error due to its use of a less than 4th order accurate implicit integration method. Also, the initial pendulum rod angles are set at 25 degrees with respect to vertical so as not to invalidate the use of small angle approximation to linearize the idealized equations of motion in subsections 1.a and 2.a below.
 
 ### 1. Summary of tutorial2x.py Results ###
 
-Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modelled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can obviously be visualized during the pendulum motion animation, but can also be seen in static plots of ODE body and RK4 mass linear and angular velocities vs time.
+Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modeled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can obviously be visualized during the pendulum motion animation, but can also be seen in static plots of ODE body and RK4 mass linear and angular velocities vs time.
 
 #### <u>1.a Linearized Differential Equations of Motion</u> ####
 
@@ -170,7 +172,7 @@ Note in the following plot of total energy relative to system's minimum potentia
 
 ### 2. Summary of tutorial2bobs.py Results ###
 
-Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modelled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can be obviously seen in plots of body/mass linear and angular velocities vs time as presented in subsection 1.b above and 2.b below. However, the derived equations of motion for a non-idealized pendulum system which accounts for mass moments of inertia should closely match that from ODE as shown in the figures presented in subsection 2.c below.
+Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modeled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can be obviously seen in plots of body/mass linear and angular velocities vs time as presented in subsection 1.b above and 2.b below. However, the derived equations of motion for a non-idealized pendulum system which accounts for mass moments of inertia should closely match that from ODE as shown in the figures presented in subsection 2.c below.
 
 #### <u>2.a Linearized, idealized Differential Equations of Motion</u> ####
 
@@ -222,7 +224,7 @@ The following four figures show the linear and angular velocities of the RK4 int
 ![Double pendulum body 1 angular velocity vs time](./imgs/2c/Figure_3.png)
 ![Double pendulum body 2 angular velocity vs time](./imgs/2c/Figure_4.png)  
 
-Note in the following plot of total energy relative to system's minimum potential energy, as expected there is zero variation in total energy of the RK4 integrated system compared to the ODE modelled system.  
+Note in the following plot of total energy relative to system's minimum potential energy, as expected there is zero variation in total energy of the RK4 integrated system compared to the ODE modeled system.  
 
 ![Double pendulum total energy vs time](./imgs/2c/Figure_5.png)  
 
