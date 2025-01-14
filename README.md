@@ -20,7 +20,7 @@ The Python programs contained in this repository are extended versions derived f
  
  4. tutorial2rods.py - Uses non-linearized differential equations of motion for solid, dimensional, infinitely stiff mass rods connected by frictionless hinge joints.
 
- 5. tutorial2arm.py - Planar 2R robotic arm dynamics, as presented in reference \[8], simulated with PyODE and Pygame.
+ 5. tutorial2arm.py - Planar 2R robotic arm dynamics, as presented in reference \[8], simulated with ODE and Pygame.
 
 A tutorial2eval.py Python script imported by tutorial2x.py and tutorial2bobs.py programs provides procedures for computing angular and linear accelerations from ODE modeled joints' and bodies' states for the compound double pendulum system.
 
