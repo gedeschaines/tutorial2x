@@ -245,7 +245,7 @@ The followimg figure depicts the ODE and RK4 simulated end effector velocity com
 
 ![Planar 2R robotic arn end effector Cartesian velocity vs time](./imgs/4/Figure_2.png)
 
-The following three figures show very good aggrement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system.
+The following three figures show very good agreement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system.
 
 ![Planar 2R robotic arn Body Linear Velocity vs time](./imgs/4/Figure_3.png)
 ![Planar 2R robotic arn Body Linear Acceleration vs time](./imgs/4/Figure_4.png)
