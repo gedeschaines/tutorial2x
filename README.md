@@ -124,15 +124,18 @@ The references listed were used to develop the equations of motion for the vario
      Institute of Technology, 2012. Web available at
      https://studylib.net/doc/14301909/a-quick-tutorial-on-multibody-dynamics
 
-\[8] Dr. Robert L. William II, "Robot Mechanics: Notesbook Supplement for ME 4290/5290 Mechanics and Control of Robotic Manipulators", Ohio University, Mech. Engineering, Spring 2015; web available at https://people.ohio.edu/williams/html/PDF/Supplement4290.pdf
+\[8] Dr. Robert L. William II, "Robot Mechanics: Notesbook Supplement for ME
+     4290/5290 Mechanics and Control of Robotic Manipulators", Ohio University,
+     Mech. Engineering, Spring 2015; web available at
+     https://people.ohio.edu/williams/html/PDF/Supplement4290.pdf
 
 ## Evaluation Summaries ##
 
-The following subsections present comparative analysis results illustrating an incrementatal approach to evaluating ODE's fidelity. First, the ODE physical system is compared to a linearized ideal system, then a non-linearized ideal system, and finally to a non-linearized, non-idealized (i.e., a physical) system. In all cases, a very small ODE simulation and RK4 integration step size of 0.001 seconds was used to reduce ODE modeling error due to its use of a less than 4th order accurate implicit integration method. Also, the initial pendulum rod angles are set at 25 degrees with respect to vertical so as not to invalidate the use of small angle approximation to linearize the idealized equations of motion in subsections 1.a and 2.a below.
+The following subsections present comparative analysis results illustrating an incrementatal approach to evaluating ODE's fidelity. First, the ODE physical system is compared to a linearized ideal system, then a non-linearized ideal system, and finally to a non-linearized, non-idealized (i.e., a physical) system. In all cases, a very small ODE simulation and RK4 integration step size of 0.001 seconds was used to reduce ODE modeling error due to its use of a less than 4th order accurate implicit integration method. Also, the initial pendulum rod angles are set at 25 degrees with respect to vertical so as not to invalidate the use of small angle approximation to linearize the idealized equations of motion in subsections 1.a and 2.a below.  
 
 ### 1. Summary of tutorial2x.py Results ###
 
-Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modeled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can obviously be visualized during the pendulum motion animation, but can also be seen in static plots of ODE body and RK4 mass linear and angular velocities vs time.
+Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modeled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can obviously be visualized during the pendulum motion animation, but can also be seen in static plots of ODE body and RK4 mass linear and angular velocities vs time.  
 
 #### <u>1.a Linearized Differential Equations of Motion</u> ####
 
@@ -146,7 +149,7 @@ The following four figures show linear and angular velocities of the RK4 integra
 ![Double pendulum body 1 absolute linear velocity vs time](./imgs/1a/Figure_1.png)
 ![Double pendulum body 2 absolute linear velocity vs time](./imgs/1a/Figure_2.png)
 ![Double pendulum body 1 angular velocity vs time](./imgs/1a/Figure_3.png)
-![Double pendulum body 2 angular velocity vs time](./imgs/1a/Figure_4.png)  
+![Double pendulum body 2 angular velocity vs time](./imgs/1a/Figure_4.png) 
 
 Note in the following plot of total energy relative to system's minimum potential energy, the accumulated divergence in linear and angular velocities of the RK4 pendulum masses result in a significant variation in total energy as compared to ODE system's total energy.  
 
@@ -172,7 +175,7 @@ Note in the following plot of total energy relative to system's minimum potentia
 
 ### 2. Summary of tutorial2bobs.py Results ###
 
-Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modeled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can be obviously seen in plots of body/mass linear and angular velocities vs time as presented in subsection 1.b above and 2.b below. However, the derived equations of motion for a non-idealized pendulum system which accounts for mass moments of inertia should closely match that from ODE as shown in the figures presented in subsection 2.c below.
+Since the derived equations of motion (eqom) for an idealized pendulum system neglects the contribution of mass moments of inertia, unlike the physical system modeled with ODE, the integrated solution of the differential eqom are unlikely to match that from ODE. This can be obviously seen in plots of body/mass linear and angular velocities vs time as presented in subsection 1.b above and 2.b below. However, the derived equations of motion for a non-idealized pendulum system which accounts for mass moments of inertia should closely match that from ODE as shown in the figures presented in subsection 2.c below.  
 
 #### <u>2.a Linearized, idealized Differential Equations of Motion</u> ####
 
@@ -190,7 +193,7 @@ The following four figures show linear and angular velocities of the RK4 integra
 
 Note in the following plot of total energy relative to system's minimum potential energy, the accumulated divergence in linear and angular velocities of the RK4 pendulum masses result in a significant variation in total energy as compared to the ODE system's total energy. This plot should be identical to that presented for total energy in case 1.a above.  
 
-![Double pendulum total energy vs time](./imgs/2a/Figure_5.png)   
+![Double pendulum total energy vs time](./imgs/2a/Figure_5.png)  
 
 #### <u>2.b Non-linearized, idealized Differential Equations of Motion</u> ####
 
@@ -243,21 +246,21 @@ The following animated GIF depicts the two-link planar 2R robotic arm motion of 
 
 The followimg figure depicts the ODE and RK4 simulated end effector velocity components which match the constant commanded Cartesian velocity \{Vx, Vy} of \{0.0, 0.5} meters per second except in the last 0.4 seconds where the ODE simulation results diverge from the constant commanded velocity. 
 
-![Planar 2R robotic arn end effector Cartesian velocity vs time](./imgs/4/Figure_2.png)
+![Planar 2R robotic arm end effector Cartesian velocity vs time](./imgs/4/Figure_2.png)  
 
-The following three figures show very good agreement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system.
+The following three figures show very good agreement between ODE and RK4 simulated dynamics of the phsical two-link planar 2R robotic arm system. Note in the 
 
-![Planar 2R robotic arn Body Linear Velocity vs time](./imgs/4/Figure_3.png)
-![Planar 2R robotic arn Body Linear Acceleration vs time](./imgs/4/Figure_4.png)
-![Planar 2R robotic arn Body Angular Velocity vs time](./imgs/4/Figure_5.png)
+![Planar 2R robotic arm Body Linear Velocity vs time](./imgs/4/Figure_3.png)
+![Planar 2R robotic arm Body Linear Acceleration vs time](./imgs/4/Figure_4.png)
+![Planar 2R robotic arm Body Angular Velocity vs time](./imgs/4/Figure_5.png)  
 
 The following five figures correspond with the plots presented in the "Numerical Dynamics Example: Plots" section on page 95 of reference \[8]; the last figure corresponding with the "Dynamic Results Including Gravity" Joint Torques plot. The initial discontinuities in ODE simulation results are due to the low fidelity integration scheme utilized in ODE.
 
-![Planar 2R robotic arn Cartesian Pose vs time](./imgs/4/Figure_1.png)
-![Planar 2R robotic arn Joint Angles vs time](./imgs/4/Figure_6.png)
-![Planar 2R robotic arn Joint Rates vs time](./imgs/4/Figure_7.png)
-![Planar 2R robotic arn Joint Accelerations vs time](./imgs/4/Figure_8.png)
-![Planar 2R robotic arn Joint Torques vs time](./imgs/4/Figure_9.png)
+![Planar 2R robotic arm Cartesian Pose vs time](./imgs/4/Figure_1.png)
+![Planar 2R robotic arm Joint Angles vs time](./imgs/4/Figure_6.png)
+![Planar 2R robotic arm Joint Rates vs time](./imgs/4/Figure_7.png)
+![Planar 2R robotic arm Joint Accelerations vs time](./imgs/4/Figure_8.png)
+![Planar 2R robotic arm Joint Torques vs time](./imgs/4/Figure_9.png)  
 
 ## Disclaimer ##
 
