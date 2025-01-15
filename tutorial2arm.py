@@ -7,15 +7,16 @@
 # File: tutorial2arm.py
 # Auth: Gary E. Deschaines
 # Date: 5 July 2015
-# Prog: Tutorial on 2R robotic arm dynamics with PyODE and Pygame
+# Prog: Tutorial on two-link planar 2R robotic arm dynamics with PyODE
+#       and Pygame.
 # Desc: Models numerical solution for robot dynamics example presented
 #       in section 11.6 of reference [1] listed below.
 #
-# The purpose of this program is to simulate the motion of a planar 
-# 2R robotic manipulator as articulated body solids modeled with Open
-# Dynamics Engine (ODE) using torques calculated by iteratively solving
-# a state space representation of the dynamic equations of motion for
-# the modeled system as derived by Newton-Euler recursion.
+# The purpose of this program is to simulate the motion of a two-link
+# planar 2R robotic manipulator as articulated body solids modeled with
+# Open Dynamics Engine (ODE) using torques calculated by iteratively
+# solving a state space representation of the dynamic equations of motion
+# forthe modeled system as derived by Newton-Euler recursion.
 #
 # Original basis for this program was obtained at
 #
