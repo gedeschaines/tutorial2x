@@ -39,7 +39,7 @@ The five tutorial2\[x|bob|bobs|rods|arm].py programs described in the above "Con
   <table rows="8" cols="5">
    <tr>
     <th colspan="1"> </th>
-    <th colspan="4" align="center">Python Version & Package Source</th>
+    <th colspan="4" align="center">Python Version & Package Version/Source</th>
    </tr>
    <tr>
     <th colspan="1" align="left">Packages</th>
@@ -98,7 +98,7 @@ The five tutorial2\[x|bob|bobs|rods|arm].py programs described in the above "Con
   <table rows="8" cols="5">
    <tr>
     <th colspan="1"> </th>
-    <th colspan="4" align="center">Python Version & Package Source</th>
+    <th colspan="4" align="center">Python Version & Package Version/Source</th>
    </tr>
    <tr>
     <th colspan="1" align="left">Packages</th>
