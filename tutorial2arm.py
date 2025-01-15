@@ -301,7 +301,7 @@ EEFF_POS = vecAdd(JOINT2_ANCHOR,distAngleToXYZ(ROD_LEN2,Theta0_1+Theta0_2))
 #   [1] Dr. Robert L. William II, "Robot Mechanics: Notesbook Supplement
 #       for ME 4290/5290 Mechanics and Control of Robotic Manipulators",
 #       Ohio University, Mech. Engineering, Spring 2015; web available at
-#       https://www.ohio.edu/mechanical-faculty/williams/html/PDF/Supplement4290.pdf
+#       https://people.ohio.edu/williams/html/PDF/Supplement4290.pdf
 #
 #   [2] John J. Craig, "Introduction to Robotics: Mechanics and Control",
 #       3rd ed., Pearson Prentice Hall, Pearson Education, Inc., Upper 
