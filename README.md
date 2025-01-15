@@ -35,7 +35,7 @@ The wxMaxima tutorial2x.wxmx and exported tutorial2x.html files in the [./docs](
 
 The five tutorial2\[x|bob|bobs|rods|arm].py programs described in the above "Content" section have successfully executed using Python versions 2.7.18 and 3.8.10 provided in an Ubuntu Linux 20.04 LTS release installed in WSL2 for Microsoft Windows 10 Pro version 22H2 OS build 19045.5247 with the requisite Python packages from sources listed in the following table.
 
- <p align="center">Versions of requisite packages associated with Python version
+ <p align="center">Requisite packages associated with Ubuntu Linux 20.04 Python version
   <table rows="8" cols="5">
    <tr>
     <th colspan="1"> </th>
@@ -86,7 +86,68 @@ The five tutorial2\[x|bob|bobs|rods|arm].py programs described in the above "Con
    <tr>
     <td colspan="5" align="left">Notes:<br>
        &nbsp;&nbsp;1. ODE - https://github.com/thomasmarsh/ODE<br>
-       &nbsp;&nbsp;2. DEB - https://askubuntu.com/questions/1339872/instaling-matplotlib-for-python-2-7-in-ubuntu-20-04
+       &nbsp;&nbsp;2. DEB - https://askubuntu.com/questions/1339872/instaling-matplotlib-for-python-2-7-in-ubuntu-20-04<br>
+    </td>
+   </tr>
+  </table>
+ </p>
+
+ The five programs have also successfully executed using Python versions 2.7.15 and 3.6.12 provided by Anaconda3 2019.10 installed for Microsoft Windows 10 Pro version 22H2 OS build 19045.5247 with the requisite Python packages from sources listed in the following table.
+
+ <p align="center">Requisite packages associated with Anaconda3 2019.10 Python version
+  <table rows="8" cols="5">
+   <tr>
+    <th colspan="1"> </th>
+    <th colspan="4" align="center">Python Version & Package Source</th>
+   </tr>
+   <tr>
+    <th colspan="1" align="left">Packages</th>
+    <th colspan="1" align="center">2.7.15</th>
+    <th colspan="1" align="center">Source</th>
+    <th colspan="1" align="center">3.6.12</th>
+    <th colspan="1" align="center">Source</th>
+   </tr>
+   <tr>
+    <td align="left">PyODE</td>
+    <td align="center">0.15.2</td>
+    <td align="center">pypi</td>
+    <td align="center">0.16.2</td>
+    <td align="center">ODE</td>
+   </tr>
+   <tr>
+    <td align="left">Pygame</td>
+    <td align="center">1.9.2a0</td>
+    <td align="center">COG</td>
+    <td align="center">2.5.2</td>
+    <td align="center">pypi</td>
+   </tr>
+   <tr>
+    <td align="left">NumPy</td>
+    <td align="center">1.16.5</td>
+    <td align="center">CFG</td>
+    <td align="center">1.19.5</td>
+    <td align="center">CFG</td>
+   </tr>
+   <tr>
+    <td align="left">Matplotlib</td>
+    <td align="center">2.2.5</td>
+    <td align="center">CFG</td>
+    <td align="center">3.3.4</td>
+    <td align="center">CFG</td>
+   </tr>
+   <tr>
+    <td align="left">SciPy</td>
+    <td align="center">1.2.1</td>
+    <td align="center">DEF</td>
+    <td align="center">1.5.3</td>
+    <td align="center">CFG</td>
+   </tr>
+   <tr>
+    <td colspan="5" align="left">Notes:<br>
+       &nbsp;&nbsp;1. ODE - https://github.com/thomasmarsh/ODE<br>
+       &nbsp;&nbsp;2. COG - https://stackoverflow.com/questions/19636480/installation-of-pygame-with-anaconda<br>
+       &nbsp;&nbsp;3. CFG - conda -c conda-forge<br>
+       &nbsp;&nbsp;4. DEF - conda -c defaults<br>
     </td>
    </tr>
   </table>
