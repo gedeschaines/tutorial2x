@@ -13,9 +13,9 @@ system modeled with Python Open Dynamics Engine (PyODE):
 # File: tutorial2eval.py
 # Auth: Gary E. Deschaines
 # Date: 29 Jun 2020
-# Prog: Tutorial2x procedures for dynamics evaluation of CPD system ODE model. 
-# Desc: Procedures to compute joint anglular accelerations and connected body 
-#       linear accelerations for compound double pendulum (CPD) system modeled
+# Prog: Tutorial2x procedures for dynamics evaluation of CDP system ODE model. 
+# Desc: Procedures to compute joint angular accelerations and connected body 
+#       linear accelerations for compound double pendulum (CDP) system modeled
 #       in ODE.
 #
 # References (as indexed in other tutorial2x Python scripts):
