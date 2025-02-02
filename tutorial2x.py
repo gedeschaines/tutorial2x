@@ -335,7 +335,7 @@ def dotS(n,S):
         G[0,0] = gdivl*(sinTpP + 2*sinT) - sinP*S[4]*(S[4] + 2*S[2])
         G[1,0] = gdivl*sinTpP + sinP*S[2]**2
         G      = -G
-        #...  compute Y' = Ainv*G
+        #... compute Y' = Ainv*G
         AinvG = Ainv.dot(G)
         #... load state vector values
         dS[1] = S[2]
