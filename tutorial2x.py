@@ -319,7 +319,7 @@ def dotS(n,S):
         dS[4] = gdivl*(S[1]-3*S[3])  # d(dP/dt)/dt
     else:
         # Refer to comment block above.
-        #... compute Ainv
+        # ... compute Ainv
         cosP      = cos(S[3])
         Ainv      = np.zeros((2,2),dtype=np.float)
         Ainv[0,0] = -1.0
@@ -327,7 +327,7 @@ def dotS(n,S):
         Ainv[1,0] = Ainv[0,1]
         Ainv[1,1] = -(2*cosP + 3.0)
         Ainv      = Ainv/(cosP**2 - 2.0)
-        #... compute G
+        # ... compute G
         sinT   = sin(S[1])
         sinP   = sin(S[3])
         sinTpP = sin(S[1]+S[3])
@@ -335,9 +335,9 @@ def dotS(n,S):
         G[0,0] = gdivl*(sinTpP + 2*sinT) - sinP*S[4]*(S[4] + 2*S[2])
         G[1,0] = gdivl*sinTpP + sinP*S[2]**2
         G      = -G
-        #... compute Y' = Ainv*G
+        # ... compute Y' = Ainv*G
         AinvG = Ainv.dot(G)
-        #... load state vector values
+        # ... load state vector values
         dS[1] = S[2]
         dS[2] = AinvG[0,0]
         dS[3] = S[4]
