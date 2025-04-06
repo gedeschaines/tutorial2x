@@ -203,8 +203,8 @@ Pdot0  =  0.0*RPD           # initial dPhi/dt
 def rodAngleToXYZ(ang):
     """
     Calculates xyz coordinates of the rod end point given rotation ang in 
-    radians measured clockwise positive from -y axis (refer to pictogram
-    of double pendulum system presented above).
+    radians measured counterclockwise positive from -y axis (refer to the
+    pictogram of double pendulum system presented above).
     """
     xyz = (ROD_LENGTH*sin(ang), -ROD_LENGTH*cos(ang), 0.0)
     return xyz
