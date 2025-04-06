@@ -332,7 +332,7 @@ def calcJ(th1,th2):
     cth12 = cos(th12)
     sth12 = sin(th12)
     
-    J      = np.zeros((2,2),dtype=np.float)
+    J      = np.zeros((2,2),dtype=float)
     J[0,0] = -L1*sth1 - L2*sth12
     J[0,1] = -L2*sth12
     J[1,0] =  L1*cth1 + L2*cth12
@@ -355,7 +355,7 @@ def calcJdot(th1,th2,thdot1,thdot2):
     cth12   = cos(th12)
     sth12   = sin(th12)
     
-    Jdot      = np.zeros((2,2),dtype=np.float)
+    Jdot      = np.zeros((2,2),dtype=float)
     Jdot[0,0] = -L1*cth1*thdot1 - L2*cth12*thdot12
     Jdot[0,1] = -L2*cth12*thdot12
     Jdot[1,0] = -L1*sth1*thdot1 - L2*sth12*thdot12
@@ -445,7 +445,7 @@ def calcStateSpace(q,dq):
     L2sq = L2*L2
     L1L2 = L1*L2
     
-    M      = np.zeros((2,2),dtype=np.float)
+    M      = np.zeros((2,2),dtype=float)
     term1  = Izz2 + m2*L2sq/4
     term2  = m2*L1L2*costh2
     term3  = term1 + term2/2
@@ -454,13 +454,13 @@ def calcStateSpace(q,dq):
     M[1,0] = term3
     M[1,1] = term1
     
-    V     = np.array([0,0],dtype=np.float)
+    V     = np.array([0,0],dtype=float)
     term1 = m2*L1L2*sinth2
     term2 = term1/2
     V[0]  = -(term2*Dth2 + term1*Dth1)*Dth2
     V[1]  = term2*Dth1**2
     
-    G = np.array([0,0],dtype=np.float)
+    G = np.array([0,0],dtype=float)
     term1 = g*L1*costh1
     term2 = g*m2*L2*costh12/2
     G[0]  = m1*term1/2 + m2*term1 + term2
@@ -475,7 +475,7 @@ def calcTorque(n,S):
     dS      = dotS(n,S)
     q       = (S[1],S[2])
     dq      = (dS[1],dS[2])
-    ddq     = np.array([dS[3], dS[4]],dtype=np.float)
+    ddq     = np.array([dS[3], dS[4]],dtype=float)
     (M,V,G) = calcStateSpace(q,dq)
     tau     = np.dot(M,np.transpose(ddq)) + np.transpose(V+G)
     
@@ -486,11 +486,11 @@ def calcAngAccel(Tq,q,dq):
     Solves [M(q)]*{d(dq/dt)/dt} = {tau} - {V(q,dq/dt)} - {G(q)}
     for {d(dq/dt)/dt}. Assumes mass matrix M is square.
     """
-    tau     = np.array([Tq[0],Tq[1]],dtype=np.float)
+    tau     = np.array([Tq[0],Tq[1]],dtype=float)
     (M,V,G) = calcStateSpace(q,dq)
     b       = np.transpose(tau-V-G)
     if np.linalg.matrix_rank(M) == M.ndim:
-        ddq = la.solve(M,b,sym_pos=True)
+        ddq = la.solve(M,b,assume_a='pos')
     else:
         ddq = la.lstsq(M,b)
     
@@ -529,12 +529,12 @@ def calcLinAccel12(S,dS):
     a1x = -hL1*thdot1sq*c1 - hL1*thddot1*s1
     a1y = -hL1*thdot1sq*s1 + hL1*thddot1*c1
     a1z = 0.0
-    a1 = np.array([a1x, a1y, a1z], dtype=np.float)
+    a1 = np.array([a1x, a1y, a1z], dtype=float)
     
     a2x = -L1*thdot1sq*c1 - hL2*thdot12sq*c12 - L1*thddot1*s1 - hL2*thddot12*s12
     a2y = -L1*thdot1sq*s1 - hL2*thdot12sq*s12 + L1*thddot1*c1 + hL2*thddot12*c12
     a2z = 0.0
-    a2 = np.array([a2x, a2y, a2z], dtype=np.float)
+    a2 = np.array([a2x, a2y, a2z], dtype=float)
     
     return a1, a2
     
@@ -550,8 +550,8 @@ def calcLinAccelEE(n,S):
     thdot2 = dS[2]
     J      = calcJ(th1,th2)
     Jdot   = calcJdot(th1,th2,thdot1,thdot2)
-    dq     = np.array([dS[1], dS[2]],dtype=np.float)
-    ddq    = np.array([dS[3], dS[4]],dtype=np.float)
+    dq     = np.array([dS[1], dS[2]],dtype=float)
+    ddq    = np.array([dS[3], dS[4]],dtype=float)
     a      = np.dot(J,np.transpose(ddq)) + np.dot(Jdot,np.transpose(dq))
     
     return (a[0], a[1], 0.0)

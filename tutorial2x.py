@@ -165,8 +165,8 @@ Pictogram of double pendulum system.
              
            (2) ODE body 2 corresponding to rod 2 is positioned wrt to body
                1 and the initial angle of rod 2 is set to Theta0_2, but the
-               angle of ODE joint 2, which which attaches body 2 to body 1, 
-               is always initialized to zero by ODE. Since the angle value
+               angle of ODE joint 2, which attaches body 2 to body 1, is
+               always initialized to zero by ODE. Since the angle value
                returned by the ODE getAngle method for joint 2 is equivalent
                to T2 minus T1 as depicted above, the sum of Theta0_2 and 
                the getAngle value for joint 1 must be added to the getAngle 
@@ -203,8 +203,8 @@ Pdot0  =  0.0*RPD           # initial dPhi/dt
 def rodAngleToXYZ(ang):
     """
     Calculates xyz coordinates of the rod end point given rotation ang in 
-    radians measured clockwise positive from -y axis (refer to pictogram
-    of double pendulum system presented above).
+    radians measured counterclockwise positive from -y axis (refer to the
+    pictogram of double pendulum system presented above).
     """
     xyz = (ROD_LENGTH*sin(ang), -ROD_LENGTH*cos(ang), 0.0)
     return xyz
@@ -264,7 +264,7 @@ JOINT2_WIDTH  = LINE_WIDTH
 #
 # The non-linear differential equations of motion given in part (a) for the
 # solution to 6-4 on page 505 of reference [1] are rearranged in the form
-# Y' = Ainv*G(y,y') as presented in the associated tutorial2.html file.
+# Y' = Ainv*G(y,y') as presented in associated ./docs/tutorial2x.html file.
 # Specifically, the matrices of the discrete state representation are as
 # follows:
 #
@@ -319,25 +319,25 @@ def dotS(n,S):
         dS[4] = gdivl*(S[1]-3*S[3])  # d(dP/dt)/dt
     else:
         # Refer to comment block above.
-        #... compute Ainv
+        # ... compute Ainv
         cosP      = cos(S[3])
-        Ainv      = np.zeros((2,2),dtype=np.float)
+        Ainv      = np.zeros((2,2),dtype=float)
         Ainv[0,0] = -1.0
         Ainv[0,1] = cosP + 1.0
         Ainv[1,0] = Ainv[0,1]
         Ainv[1,1] = -(2*cosP + 3.0)
         Ainv      = Ainv/(cosP**2 - 2.0)
-        #... compute G
+        # ... compute G
         sinT   = sin(S[1])
         sinP   = sin(S[3])
         sinTpP = sin(S[1]+S[3])
-        G      = np.zeros((2,1),dtype=np.float)
+        G      = np.zeros((2,1),dtype=float)
         G[0,0] = gdivl*(sinTpP + 2*sinT) - sinP*S[4]*(S[4] + 2*S[2])
         G[1,0] = gdivl*sinTpP + sinP*S[2]**2
         G      = -G
-        #...  compute Y' = Ainv*G
+        # ... compute Y' = Ainv*G
         AinvG = Ainv.dot(G)
-        #... load state vector values
+        # ... load state vector values
         dS[1] = S[2]
         dS[2] = AinvG[0,0]
         dS[3] = S[4]

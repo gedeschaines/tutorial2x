@@ -1,3 +1,4 @@
+.vscode/*
 anim/*.png
 __pycache__/*
 *.pyc

@@ -175,8 +175,8 @@ Pictogram of double pendulum system.
              
            (2) ODE body 2 corresponding to rod 2 is positioned wrt to body
                1 and the initial angle of rod 2 is set to Theta0_2, but the
-               angle of ODE joint 2, which which attaches body 2 to body 1, 
-               is always initialized to zero by ODE. Since the angle value
+               angle of ODE joint 2, which attaches body 2 to body 1, is
+               always initialized to zero by ODE. Since the angle value
                returned by the ODE getAngle method for joint 2 is equivalent
                to T2 minus T1 as depicted above, the sum of Theta0_2 and 
                the getAngle value for joint 1 must be added to the getAngle 
@@ -217,8 +217,8 @@ Pdot0 = 0.0*RPD  # initial dPhi/dt
 def rodAngleToXYZ(ang):
     """
     Calculates xyz coordinates of the rod end point given rotation ang in 
-    radians measured clockwise positive from -y axis (refer to pictogram
-    of double pendulum system presented above).
+    radians measured counterclockwise positive from -y axis (refer to the
+    pictogram of double pendulum system presented above).
     """
     xyz = (ROD_LENGTH*sin(ang), -ROD_LENGTH*cos(ang), 0.0)
     return xyz

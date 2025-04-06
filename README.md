@@ -22,7 +22,7 @@ The Python programs contained in this repository are extended versions derived f
 
  5. tutorial2arm.py - Two-link Planar 2R robotic arm dynamics, as presented in reference \[8], simulated with ODE and Pygame.
 
-A tutorial2eval.py Python script imported by tutorial2x.py and tutorial2bobs.py programs provides procedures for computing angular and linear accelerations from ODE modeled joints' and bodies' states for the compound double pendulum system.
+A tutorial2eval.py Python script imported by tutorial2x.py and tutorial2bobs.py programs provides procedures for computing angular and linear accelerations from ODE modeled joints' and bodies' states for the compound double pendulum system. A tutorial2util.py Python script contains utility procedures to print vector and feedback data for named ODE body and joint objects respectively, and to obtain ODE body to world rotation 9-tuple matrices and convert 9-tuple matrices to row vector matrices.
 
 The following two Python modules provide the Runge-Kutta integration functions and vector/matrix math functions utilized by each of the programs listed above.
 
