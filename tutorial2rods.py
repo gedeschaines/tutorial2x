@@ -155,8 +155,8 @@ Pictogram of the double compound pendulum system.
              
            (2) ODE body 2 corresponding to rod 2 is positioned wrt to body
                1 and the initial angle of rod 2 is set to Theta0_2, but the
-               angle of ODE joint 2, which which attaches body 2 to body 1, 
-               is always initialized to zero by ODE. Since the angle value
+               angle of ODE joint 2, which attaches body 2 to body 1, is
+               always initialized to zero by ODE. Since the angle value
                returned by the ODE getAngle method for joint 2 is equivalent
                to T2 minus T1 as depicted above, the sum of Theta0_2 and 
                the getAngle value for joint 1 must be added to the getAngle 

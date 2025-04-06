@@ -165,8 +165,8 @@ Pictogram of double pendulum system.
              
            (2) ODE body 2 corresponding to rod 2 is positioned wrt to body
                1 and the initial angle of rod 2 is set to Theta0_2, but the
-               angle of ODE joint 2, which which attaches body 2 to body 1, 
-               is always initialized to zero by ODE. Since the angle value
+               angle of ODE joint 2, which attaches body 2 to body 1, is
+               lways initialized to zero by ODE. Since the angle value
                returned by the ODE getAngle method for joint 2 is equivalent
                to T2 minus T1 as depicted above, the sum of Theta0_2 and 
                the getAngle value for joint 1 must be added to the getAngle 
@@ -264,7 +264,7 @@ JOINT2_WIDTH  = LINE_WIDTH
 #
 # The non-linear differential equations of motion given in part (a) for the
 # solution to 6-4 on page 505 of reference [1] are rearranged in the form
-# Y' = Ainv*G(y,y') as presented in the associated tutorial2.html file.
+# Y' = Ainv*G(y,y') as presented in associated ./docs/tutorial2x.html file.
 # Specifically, the matrices of the discrete state representation are as
 # follows:
 #
